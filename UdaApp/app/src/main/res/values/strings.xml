@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">UdaApp</string>
+    <string name="text_forget_password">Forget your Password?</string>
+    <string name="app_title">Log Into your account</string>
+    <string name="app_login_text">LOG IN</string>
+    <string name="app_detail">Your acccount is your portal to things \n Udacity:Your classroom , projects , forum , career , resources and more!</string>
+</resources>
+
