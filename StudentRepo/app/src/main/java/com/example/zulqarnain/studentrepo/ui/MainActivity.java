@@ -10,7 +10,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -28,11 +30,14 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_IMG_CODE = 23;
     StudentDbHelper dbh;
     ImageView imagev;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         dbh = new StudentDbHelper(this);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
        /* ArrayList<Student> ls = new ArrayList<>();
         ls = dbh.getStudentData();
         Student std = ls.get(0);
@@ -77,4 +82,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+
 }

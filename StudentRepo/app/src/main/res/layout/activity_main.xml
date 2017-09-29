@@ -7,6 +7,10 @@
     android:orientation="vertical"
     tools:context="com.example.zulqarnain.studentrepo.ui.MainActivity">
 
+<include
+    layout="@layout/tool_bar_layout">
+
+</include>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

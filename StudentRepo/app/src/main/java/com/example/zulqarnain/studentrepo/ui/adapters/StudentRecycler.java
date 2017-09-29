@@ -51,4 +51,9 @@ public class StudentRecycler  extends RecyclerView.Adapter<StudentRecycler.StdVi
             stdImg=itemView.findViewById(R.id.std_img);
         }
     }
+    public void setFilter(ArrayList<Student> mList){
+        list=new ArrayList<>();
+        list.addAll(mList);
+        notifyDataSetChanged();
+    }
 }
