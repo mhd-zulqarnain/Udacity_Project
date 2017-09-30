@@ -54,12 +54,12 @@ public class StudentDbHelper extends SQLiteOpenHelper
             Log.d("TAG", "onCreate: Exception");
         }
     }
-    public long insetData(String path) {
+    public long insetData(String name,String phone,String email,String path) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues content = new ContentValues();
-        content.put(STD_NAME, "name1");
-        content.put(STD_EMAIL, "test");
-        content.put(STD_PHONE, "test");
+        content.put(STD_NAME, name);
+        content.put(STD_EMAIL, phone);
+        content.put(STD_PHONE, email);
         content.put(STD_IMAGE, path);
         return db.insert(TABLE_NAME, null, content);
 
@@ -74,7 +74,7 @@ public class StudentDbHelper extends SQLiteOpenHelper
             int st_id=cursor.getInt(0);
             String st_name=cursor.getString(1);
             String st_ph=cursor.getString(2);
-            String st_email=cursor.getString(2);
+            String st_email=cursor.getString(3);
             String st_img=cursor.getString(4);
             Student std =new Student(st_id,st_name,st_ph,st_email,st_img);
             sList.add(std);
@@ -96,6 +96,11 @@ public class StudentDbHelper extends SQLiteOpenHelper
             sList.add(std);
         }
         return sList;
+    }
+
+    public void delStuent(int id){
+        SQLiteDatabase db= getWritableDatabase();
+        db.delete(TABLE_NAME,STD_ID+" = ?",new String[]{String.valueOf(id)});
     }
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {

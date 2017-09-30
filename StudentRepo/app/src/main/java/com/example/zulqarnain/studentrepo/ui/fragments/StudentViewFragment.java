@@ -1,13 +1,12 @@
-package com.example.zulqarnain.studentrepo.ui;
+package com.example.zulqarnain.studentrepo.ui.fragments;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.util.ArrayMap;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,6 +17,7 @@ import android.view.ViewGroup;
 import com.example.zulqarnain.studentrepo.R;
 import com.example.zulqarnain.studentrepo.database.StudentDbHelper;
 import com.example.zulqarnain.studentrepo.model.Student;
+import com.example.zulqarnain.studentrepo.ui.adapters.AdapterCallBack;
 import com.example.zulqarnain.studentrepo.ui.adapters.StudentRecycler;
 
 import java.util.ArrayList;
@@ -26,12 +26,15 @@ import java.util.ArrayList;
  * Created by Zul Qarnain on 9/27/2017.
  */
 
-public class StudentViewFragment extends Fragment implements SearchView.OnQueryTextListener {
+public class StudentViewFragment extends Fragment implements SearchView.OnQueryTextListener ,AdapterCallBack {
     StudentDbHelper dbh;
     ArrayList<Student> mList;
     RecyclerView recyclerView;
     StudentRecycler adapter;
-    @Nullable
+
+    public static Fragment newInstance(){
+      return new StudentViewFragment();
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View row = inflater.inflate(R.layout.student_view_fragement,container,false);
@@ -58,7 +61,7 @@ public class StudentViewFragment extends Fragment implements SearchView.OnQueryT
         MenuItem item=menu.findItem(R.id.action_search);
         final SearchView searchView = (SearchView) item.getActionView();
         searchView.setOnQueryTextListener(this);
-
+        adapter.setAdapterCallback(this);
     }
 
 
@@ -75,24 +78,18 @@ public class StudentViewFragment extends Fragment implements SearchView.OnQueryT
             String name= model.getSt_name().toLowerCase();
             if(name.contains(newText)){
                 newList.add(model);
-
             }
         }
         adapter.setFilter(newList);
         return true;
     }
 
- /*   @Override
-    public boolean onQueryTextSubmit(String query) {
-        mList = dbh.getStudent(query);
-
-        recyclerView.setAdapter(new StudentRecycler(mList));
-//        notifyDataSetChanged();
-        return true;
-    }
-
+    ///to delete the object on clicking the button in view holder
     @Override
-    public boolean onQueryTextChange(String newText) {
-        return false;
-    }*/
+    public void methodcallback(int stdID) {
+        dbh.delStuent(stdID);
+        mList=dbh.getStudentData();
+        adapter.setFilter(mList);
+        Log.d("TAF", "methodcallback: called"+stdID);
+    }
 }
