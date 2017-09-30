@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">StudentRepo</string>
     <string name="delete_button">Delete</string>
-    <string name="add_button">Add</string>
+    <string name="add_button">Add Record</string>
     <string name="view_button">View</string>
     <string name="add_image">Add Image</string>
-    <string name="Student_name">Enter Student name</string>
-    <string name="Student_email">Enter Student email</string>
-    <string name="Student_phone">Enter Student phone</string>
+    <string name="Student_name"> Student name</string>
+    <string name="Student_email">email</string>
+    <string name="Student_phone">phone</string>
 
 
 </resources>

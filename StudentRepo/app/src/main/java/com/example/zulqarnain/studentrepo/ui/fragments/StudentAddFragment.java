@@ -95,7 +95,6 @@ public class StudentAddFragment extends Fragment implements View.OnClickListener
         String phone = mStdPhone.getText().toString();
         if (!name.equals("") && !phone.equals("") && !email.equals("") && !imgStringForm.equals("")) {
             long i = dbh.insetData(name, phone, email, imgStringForm);
-            Messege.messege(getActivity(), " " + i);
             Intent intent = StudentViewActivity.newIntent(getActivity());
             startActivity(intent);
         } else {

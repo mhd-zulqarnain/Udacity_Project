@@ -5,58 +5,67 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/std_img"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:src="@mipmap/ic_launcher"
-                android:id="@+id/std_img"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/std_name"
-                style="@style/myFontStyle"
-                android:layout_toRightOf="@id/std_img"
-                android:text="Testting text"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/std_phone"
-                style="@style/myFontStyle"
-                android:text="Testting text"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:layout_below="@+id/std_name"
-                android:layout_toRightOf="@+id/std_img"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/std_email"
-                style="@style/myFontStyle"
-                android:text="Testting text"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_below="@+id/std_phone"
-                android:layout_toRightOf="@+id/std_img"
+                android:layout_margin="3dp"
+                android:background="#fff"
                 />
 
-            <Button
+            <TextView
+                android:id="@+id/std_name"
+                style="@style/myFontStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/delete_button"
+                android:layout_toRightOf="@id/std_img"
+                android:text="Testting text"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/std_phone"
+                style="@style/myFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/std_name"
+                android:layout_toRightOf="@+id/std_img"
+                android:text="Testting text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                />
+
+            <TextView
+                android:id="@+id/std_email"
+                style="@style/myFontStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/std_phone"
+                android:layout_toRightOf="@+id/std_img"
+                android:text="Testting text"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <Button
                 android:id="@+id/btn_dlt"
-                android:layout_alignBottom="@+id/std_email"
-                android:layout_alignParentRight="true"
+                android:layout_width="74dp"
+                android:layout_height="40dp"
+                style="@style/ButtontStyle"
                 android:layout_alignParentEnd="true"
-                android:layout_marginRight="24dp"
-                android:layout_marginEnd="24dp" />
+                android:layout_alignParentRight="true"
+                android:layout_alignBaseline="@id/std_name"
+                android:layout_alignTop="@id/std_name"
+                android:text="@string/delete_button"
+                android:background="#e45454"
+
+                />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

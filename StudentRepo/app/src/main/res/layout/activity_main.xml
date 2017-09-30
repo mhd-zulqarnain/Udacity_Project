@@ -5,18 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#ffffff"
     tools:context="com.example.zulqarnain.studentrepo.ui.activities.MainActivity">
 
 <include
     layout="@layout/tool_bar_layout">
 </include>
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:onClick="viewStudent"
         android:text="@string/view_button"
+        style="@style/ButtontStyle"
         />
 
     <Button
@@ -25,6 +31,10 @@
         android:layout_gravity="center_horizontal"
         android:onClick="addStudent"
         android:text="@string/add_button"
+        style="@style/ButtontStyle"
+
         />
+</LinearLayout>
+
 
 </LinearLayout>

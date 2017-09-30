@@ -1,6 +1,7 @@
 package com.example.zulqarnain.studentrepo.ui.adapters;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.example.zulqarnain.studentrepo.model.Student;
 import com.example.zulqarnain.studentrepo.ui.fragments.StudentAddFragment;
 import com.example.zulqarnain.studentrepo.ui.fragments.StudentViewFragment;
 import com.example.zulqarnain.studentrepo.utilities.ImgProcess;
+import com.example.zulqarnain.studentrepo.utilities.Messege;
 
 import java.util.ArrayList;
 
@@ -39,6 +41,7 @@ public class StudentRecycler  extends RecyclerView.Adapter<StudentRecycler.StdVi
     public void onBindViewHolder(StdViewHolder holder, int position) {
         Student std = list.get(position);
         holder.bindView(std);
+
     }
 
     @Override

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.Fragment;
 
-import com.example.zulqarnain.studentrepo.ui.SingleFragmentActivity;
 import com.example.zulqarnain.studentrepo.ui.fragments.StudentAddFragment;
 
 /**
